@@ -7,4 +7,7 @@ test("Http trigger example", async () => {
   };
 
   await httpFunctions(context, request);
+  // expoct(context.res.body).toEqual("Hello, schuc");
+  expect(context.res.body).toEqual("welcome, schuc");
+  expect(context.log.mock.calls.length).toEqual(1);
 });
